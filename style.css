@@ -1,0 +1,326 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full height */
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap */
+    width: 100%;
+    height: calc(100vh - 80px); /* Leaves space for footer */
+    background: linear-gradient(135deg, black, grey);
+    overflow: hidden;
+}
+
+/* Left and Right Sections */
+.left, .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+
+/* Left Section */
+.left {
+    position: relative;
+    top: -20px; /* Moves only the left section up */
+}
+
+.left h1 {
+    font-size: 9em;
+    text-align: center;
+    color: antiquewhite;
+    font-family: "Germania One", serif;
+}
+
+.left p {
+    font-size: 2em;
+    color: #b0e0e6;
+  font-family: "Exo 2", serif;
+  font-optical-sizing: auto;
+  font-weight:400;
+  font-style: normal;
+  position:relative;
+  top:-10px;
+}
+
+/* Order Now Button */
+.order-now-btn {
+    background: linear-gradient(135deg, #ff7e5f, #ffb199);
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 126, 95, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position:relative;
+    top:12px;
+}
+
+.order-now-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(255, 126, 95, 0.7);
+}
+
+.order-now-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(255, 126, 95, 0.5);
+}
+
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Center the Form */
+#order-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* Adjust width if needed */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: none; /* Hide form by default */
+}
+
+
+/* Modal Content Box */
+/* Center the modal content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Form Styling */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+
+/* Right Section */
+.right {
+    gap: 50px;
+}
+
+/* About Section */
+.about {
+    width: 85%;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Subtle glass effect */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 4px;
+}
+
+/* Title Styling */
+.about h2 {
+    font-size: 2em;
+    color: antiquewhite;
+    font-family: "Exo 2", sans-serif;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    
+}
+
+/* Paragraph Styling */
+.about p {
+    font-size: 1em;
+    color: #ddd;
+    line-height: 1.5;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+
+/* Gallery */
+/* Gallery Styling */
+.gallery {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    margin-top: -60px;
+}
+
+.gallery h2 {
+    font-size: 2em;
+    color: antiquewhite;
+    margin-bottom: 20px;
+    font-family: "Exo 2", sans-serif;
+    letter-spacing: 1px;
+    position:relative;
+    top:12px
+}
+
+/* Grid-based responsive layout */
+.images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Image Styling */
+.images img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.image-box {
+    width: 120px;
+    height: 120px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+/* Features Section */
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin:0 auto;
+    width: 100%;
+    padding: 30px 0;
+    background: linear-gradient(135deg, #1e1e1e, #3b3b3b); /* Dark Gray to Lighter Gray */
+}
+
+/* Feature Box */
+.feature {
+    text-align: center;
+    width: 220px;
+    padding: 20px;
+    background: linear-gradient(135deg, #333333, #4a4a4a); /* Slight Contrast */
+    color: #ffffff; /* White Text */
+    border-radius: 10px;
+    border: 1px solid #5a5a5a; /* Subtle Border */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    position: relative;
+    top: -2px;
+}
+
+/* Icons */
+.feature i {
+    font-size: 2rem;
+    color: #FFD700; /* Gold color */
+}
+
+/* Headings */
+.feature h3 {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+/* Paragraphs */
+.feature p {
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+/* Hover Effect */
+.feature:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0; /* Ensures equal spacing */
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 50px; /* Adjust as needed */
+}
+   
